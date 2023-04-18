@@ -4,7 +4,7 @@ import java.util.Enumeration;
 public class EmployeePayrollMain {
     public static void main(String[] args) {
         String url
-                = "jdbc:mysql://localhost:3306/payroll_service";
+                = "jdbc:mysql://localhost:3306/Emppayroll_service";
         String username = "root";
         String password = "root";
         Connection con;
@@ -27,8 +27,8 @@ public class EmployeePayrollMain {
                     String name = rs.getString("name"); // Retrieve name from db
                     System.out.println(name); // Print result on console
 
-                    String salary
-                            = rs.getString("salary"); // Retrieve name from db
+                    double salary
+                            = rs.getDouble("salary"); // Retrieve name from db
                     System.out.println(salary); // Print result on console
 
                     String startDate
@@ -44,5 +44,7 @@ public class EmployeePayrollMain {
         } catch (SQLException | ClassNotFoundException e){
             System.out.println("Catch block");
         }
+
     }
+
 }
